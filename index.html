@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">  <!--"user-scalable=no"-отключено маштабирование жестами в телефонах-->
+    <title>Задание</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+  <nav class="header__nav">
+    <div class="nav__left">
+      <div class="nav__btn burger_icon"></div>
+      <img class="divider_left" src="img/divider-left.svg" alt="">    
+      <img class="header__logo" src="img/Logo.svg" alt="Логотип"></a> 
+      <img class="divider_right" src="img/divider-right.svg" alt=""> 
+      </div>
+    </div>
+    <div class="nav__right">
+      <div class="nav__btn phone_icon nav__btn-lurk" id="phone"></div>
+      <div class="nav__btn message_icon nav__btn-lurk" id="feedback"></div>
+      <div class="nav__btn profile_icon nav__btn-lurk"></div>
+      <div class="nav__btn service_icon"></div>
+      <div class="nav__btn search_icon"></div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hgjhj">
+    <div class="header__top"> 
+      <h1 class="header_h1">Услуги и сервисы</h1>
+      <div class="header__right">
+        <p>Оставить заявку</p>
+        <div class="header__btn service_icon"></div>
+        <p>Статус ремонта</p>
+        <div class="header__btn search_icon"></div>
+      </div>
+    </div>
+    <div class="nav"> 
+      <ul class="nav__list" id="myDIV">
+        <li class="nav__item active"><a class="nav__link " href="#1">Ремонтируемые бренды</a></li>
+        <li class="nav__item"><a class="nav__link" href="#2">Ремонтируемые устройства</a></li>
+        <li class="nav__item"><a class="nav__link" href="#3">Цены на услуги</a></li>
+        <li class="nav__item"><a class="nav__link" href="#4">Адреса сервисных центров</a></li>
+        <li class="nav__item"><a class="nav__link" href="#5">Специальные цены</a></li>
+        <li class="nav__item nav__item_q"><a class="nav__link" href="#6">Отзывы</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="left-text"> 
+        <div class="text"> 
+            <p class="bottom_indent">Мы являемся авторизованным сервисным центром по ремонту 
+            техники Dell. Только у нас вы можете отремонтировать 
+            свой ноутбук Dell с официальной гарантией производителя.
+            </p>Мы успешно работаем с 1992 года и заслужили репутацию 
+            надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся 
+            тем, что к нам обращаются по рекомендациям и, в свою очередь, 
+            советуют нас родным и близким.<span id="dots"></span><span id="more"><p class="top_space">Алпомваомтв
+            рмирвамировиаморвиморвимовам авмолвлоа овламтвлоамтлвм твомтваомтв
+            вармирвам ровами амиорвиаморвиа виаморвиамровиамо випмривоа ивармивм
+            вомирвоамиовамиовриамовимовиа оволтолм куолтау оат окатуоат от</span></p>
+        </div>
+        <button class="btn_read btn " onclick="myFunction()" id="myBtn">Читать далее</button>
+      </div>
+      <div class="right-img"> 
+        <div class="img">
+          <img class="pic" src="img/picture.jpg" alt="Логотип компании">
+        </div>
+      </div>
+    </div>
+  </section> 
+</main>
+
+
+
+<script>
+// Добавил активный класс к текущей кнопке (выделил его)
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("nav__item"); 
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+
+// Читать дальше
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Читать далее";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Свернуть текст";
+    moreText.style.display = "inline";
+  }
+}
+</script>
+</body>
+</html>

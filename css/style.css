@@ -1,0 +1,413 @@
+@charset "UTF-8"; 
+
+
+
+
+@font-face { 
+  font-family: "TT Lakes";                        
+  font-style: normal;                              
+  font-weight: 500;                             
+  font-display: swap;                             
+  src: url(../fonts/TTLakes-Medium.woff) format("woff"),
+  url(../fonts/TTLakes-Medium.woff2) format("woff2"); 
+}
+@font-face {
+  font-family: "TT Lakes"; 
+  font-style: normal; 
+  font-weight: 700;                              
+  font-display: swap;
+  src: url(../fonts/TTLakes-Condensed-Bold.woff) format("woff"), 
+  url(../fonts/TTLakesCondensed-Bold.woff2) format("woff2"), ; 
+}
+@font-face {
+  font-family: "TT Lakes"; 
+  font-style: normal; 
+  font-weight: 400;                            
+  font-display: swap;
+  src: url(../fonts/TTLakes-Regular.woff) format("woff"), 
+  url(../fonts/TTLakesRegular.woff2) format("woff2"), ; 
+}
+
+
+
+
+
+/*сброс стилей*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+}
+
+
+
+
+body {
+  font-family: "TT Lakes", sans-serif;
+  overflow-x: hidden;     /*убран скролл*/
+  background-color: #F8F8F8; }
+  
+
+
+
+
+
+.header {
+  width: 100%;                                    /*браузр растянет элмнт на 100% ширин родителя*/
+  background-color: #ffffff;                   
+  border-bottom: 1px solid #9effe5;                                   
+  margin-bottom: 24px;                            
+  
+  transition: .5s;   /*плавный переход*/
+  transition-delay: .5s; } 
+
+  @media screen and (min-width: 320px) {          /*min-width означает "от" (включительно)*/
+    .header {                                
+      background-color: #ffffff; } }            
+  @media screen and (min-width: 1120px) {         /*min-width означает "от" (включительно)*/
+    .header {                                    
+      display: none; } }                          /*удаляется из дерева доступности от 1120px*/
+
+
+
+
+.header__nav {
+  width: auto;                                     
+  height: 88px;                                    
+  display: flex;  
+  justify-content: space-between;                  /*раскидать флекс элементы по сторонам*/
+  align-items: center; }                          
+  @media screen and (min-width: 320px) and (max-width: 767px) { /*min-width означает "от" (включительно) меньше уже не будет дейстовать*/
+    .header__nav {
+      margin-left: 16px;                          
+      margin-right: 24px; } }
+  @media screen and (min-width: 768px) {           
+    .header__nav {
+      margin-left: 24px;                          
+      margin-right: 24px; } }
+
+.nav__left {
+  display: flex; }
+  @media screen and (min-width: 1440px) {
+    .nav__left {
+      margin-left: -15px; } }                      
+
+.nav__right {
+  display: flex;
+  justify-content: center; }
+
+/*телефон клнтакты профоиль */
+@media screen and (min-width: 320px) and (max-width: 768px) {  
+  .nav__btn-lurk {
+    display: none; } }                                          /*скрыть*/
+
+
+
+
+.header__logo {
+  width: 97px;
+  height: 51px;
+  margin-left: 16px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative; }
+  @media screen and (min-width: 768px) and (max-width: 1119px) {
+    .header__logo {
+      margin-left: 20px; }
+      .header__logo:after {
+        content: "";
+        position: absolute;
+        height: 32px;
+        width: 2px;
+        background-color: #EAEAEA;
+        top: 10px;
+        left: -20px; } }
+
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1119px) {
+  .divider_left {
+    margin-left: 20px; } }
+
+@media screen and (max-width: 767px) {
+  .divider_left {
+    display: none; } }
+    
+@media screen and (min-width: 767px) {
+    .divider_right {
+      display: none; } }
+
+@media screen and (max-width: 768px) {
+  .divider_right {
+    margin-left: 20px; } }
+
+
+
+
+.btn  {
+  align-self: flex-start;             /*кнопка "читать дальше" больше не сьезжает*/
+  font-size: 16px;                  
+  font-weight: 500;                 
+  border: none;                      
+  background-color: transparent;      
+  cursor: pointer;                   
+}
+
+.btn_read {           
+  margin-left: 43px;                  
+  line-height: 24px;                  
+  position: relative;
+  letter-spacing: -0.2px;
+}
+  .btn_read:before {             
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: -32px;
+    background: url(../img/arrow.svg) no-repeat center; } 
+  @media screen and (min-width: 768px) {
+    .btn_read {
+    margin-left: 64px;                     
+    align-self: flex-start; } }   
+
+
+.nav__btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 16px;
+  cursor: pointer; }                                 
+  .nav__btn:hover {
+    border: 2px solid #ffffff;                
+    background-color: #fff; }
+  .nav__btn:focus {
+    background-color: #fff; }
+  .nav__btn:first-child {
+    align-self: center;
+    margin-left: 0; }
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .nav__btn-lurk {
+    display: none; } }
+
+.btn_get {
+  font-family: "TT Lakes", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: #1B1C21; }
+
+
+
+.header__top {
+  font-weight: 500;    
+  margin-left: 32px;
+  margin-top: 42px;  
+  margin-bottom: 8px; 
+  display: flex;
+  justify-content: space-between; 
+} 
+
+.header_h1 {    
+  font-size: 28px;
+  line-height: 40px;
+  letter-spacing: -0.6px; }
+
+.header__right {   
+  display: flex;
+  align-items: center;                             
+  margin-right: 30px; }
+  @media screen and (max-width: 1120px) {           
+    .header__right {
+      display: none; } }
+
+
+.header__btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 16px;
+  margin-right: 16px;
+  cursor: pointer; }                             /*курсор менятся при наведении не только на текст, а на весь блок ссылки. */
+  .header__btn:hover {
+    border: 2px solid #ffffff;                 /*цвет границы при навдениии*/
+ }
+
+
+.service_icon {
+  background: url(../img/repair.svg) center;
+}
+
+.search_icon {
+  background: url(../img/search.svg) no-repeat center;
+}
+
+.burger_icon {
+  background: url(../img/burger.svg) no-repeat center;
+}
+
+.message_icon {
+  background: url(../img/chat.svg) no-repeat center;
+}
+
+.phone_icon {
+  background: url(../img/call.svg) no-repeat center;
+ }
+
+.profile_icon {
+  background: url(../img/profile.svg) no-repeat center;           /*сделть разделитель*/
+}
+.profile_icon:hover {                                
+    background: url(../img/profile.svg) no-repeat center; } 
+  @media screen and (min-width: 768px) and (max-width: 1119px) {  
+    .profile_icon {
+      margin-right: 36px;
+      position: relative; }
+      .profile_icon:after {
+        content: "";
+        background: url(../img/divider-right.svg) no-repeat center;  
+        position: absolute;
+        right: -25px;
+        top: 3px;
+        height: 32px;
+        width: 3px;
+         } }
+
+
+.nav {
+  padding: 0;                           
+  margin-bottom: 20px; }
+  
+  @media screen and (min-width: 768px) {
+    .nav {
+      padding: 0; } } 
+
+
+.nav__list {
+  margin-left: 32px;                    
+  width: 100%;
+  display: flex;
+  overflow: scroll; }
+  @media screen and (min-width: 1120px) {
+    .nav__list {
+      overflow: auto; } }
+
+.nav__list_mobile {
+  display: flex;
+  flex-direction: column; }
+
+.nav__item {
+  margin: 0px 0px 15px;
+  cursor: pointer;                                   
+  font-weight: 500;                                 
+  height: 40px;                                     
+  width: auto;                                       /*позволяю браузеру самому рассчитать ширину элемента*/
+  font-size: 16px;                                  
+  line-height: 24px;                                
+  letter-spacing: -0.20000000298023224px;          
+  align-items: center;                              
+  display: flex;                                    
+  padding: 0 13px;  
+  white-space: nowrap;                               /*запрещаем тексту переноситься на новую строку*/
+  border-radius: 6.08px;                             /*скругление границ применяется сразу ко всем четырём углам блока*/
+  transition: .1s;                                   /*плавный переход*/
+  border: 2px solid transparent;                     /*"border" - Отрисовка видимой границы блока. "width px" - граница, "solid" - тип границы, "transparent" - прозрачный фон */                                           
+  }
+
+
+
+/*"hover"- срабатывает при наведении курсора на элемент мышью, но не 
+обязательно активирует его.
+"focus" - Меняем внешний вид элемента в фокусе, 
+активируется при клике мышью*/
+  .nav__item:hover, .nav__item:focus {              
+    background: #FFFFFF;                 
+    border-radius: 6px;                           
+    border: 2px solid #87ffdf;                   
+  }
+/*определяет стиль активного элемента. Состояние элемента происходит между 
+щелчком и отпусканием клавиши мыши.*/
+    .active {                                       
+      background: #FFFFFF;
+      border: 2px solid #87ffdf;
+      border-radius: 6px; 
+      } 
+
+
+      
+
+.nav__link {
+  color: #7E7E82;        
+  text-decoration: none; }  
+
+
+@media screen and (min-width: 768px) { 
+  .container {
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 16px; } } 
+ 
+
+@media screen and (min-width: 768px) {
+  .left-text {   
+    width: 43%;     
+    display: flex;
+    flex-direction: column; } }  
+    
+
+/*отступ снизу первого параграфа*/
+.bottom_indent {
+  padding-bottom: 20px;
+
+}
+/*отступ сверху скрытого третьего параграфа*/
+.top_space {
+  margin-top: 20px;
+}
+
+    
+#more {display: none;}
+
+
+@media screen and (min-width: 768px) { 
+  .right-img {  
+    width: 50%;  
+    margin-right: 24px; } }
+
+.text {   
+  font-weight: 400;
+  margin: 0 16px 16px 16px;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.16px; }
+  @media screen and (min-width: 768px) {
+    .text {
+      margin-left: 32px;  
+      width: 490pх; } }   
+    
+    
+.img {  
+  margin: 20px auto;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; }
+  @media screen and (min-width: 768px) {
+    .img {
+      margin: 0; } }
+    
+.pic {  
+  width: 100%; }                        
+  @media screen and (min-width: 768px) { 
+    .pic {
+     border-radius: 10px; } }
+  @media screen and (min-width: 1120px) { 
+    .pic {
+      border-radius: 10px;
+        width: 530px; } }   
+
+        
+
